@@ -50,15 +50,17 @@ function Subtask({ subtask, taskId }) {
     };
 
     const handleDeleteSuperSubtask = async (superSubtaskId) => {
-        const res = await fetch(
-            `https://studyapp-backend-m6gm.onrender.com/tasks/${taskId}/subtasks/${subtask._id}/superTask/${superSubtaskId}`,
-            {
+
+        const confirmDelete = window.confirm("Are you sure you want to delete this task?");
+
+        if (confirmDelete) {
+            const res = await fetch(`https://studyapp-backend-m6gm.onrender.com/tasks/${taskId}/subtasks/${subtask._id}/superTask/${superSubtaskId}`,{
                 method: "DELETE",
-            }
-        );
+            });
     
-        if (res.ok) {
-            window.location.reload();
+            if (res.ok) {
+                window.location.reload();
+            }
         }
     };
     
