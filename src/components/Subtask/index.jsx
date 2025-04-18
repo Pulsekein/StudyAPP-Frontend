@@ -36,12 +36,16 @@ function Subtask({ subtask, taskId }) {
     };
 
     const handleDelete = async () => {
-        const res = await fetch(`https://studyapp-backend-m6gm.onrender.com/tasks/${taskId}/subtasks/${subtask._id}`, {
-            method: "DELETE",
-        });
+        const confirmDelete = window.confirm("Are you sure you want to delete this task?");
 
-        if (res.ok) {
-            window.location.reload();
+        if (confirmDelete) {
+            const res = await fetch(`https://studyapp-backend-m6gm.onrender.com/tasks/${taskId}/subtasks/${subtask._id}`, {
+                method: "DELETE",
+            });
+            
+            if (res.ok) {
+                window.location.reload();
+            }
         }
     };
 
