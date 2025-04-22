@@ -97,7 +97,7 @@ body {
 .subtask-card button {
     margin-left: 5px;
     font-size: 16px;
-    background-color: transparent;
+    background-color: none;
     border: none;
     cursor: pointer;
 }
