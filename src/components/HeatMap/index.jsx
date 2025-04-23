@@ -4,9 +4,9 @@ import "./style.css";
 
 function getShade(count) {
     if (!count) return "#e0e0e0";
-    if (count === 1) return "#a8e6cf";
-    if (count <= 3) return "#56c596";
-    if (count <= 5) return "#379683";
+    if (count <= 3) return "#a8e6cf";
+    if (count <= 6) return "#56c596";
+    if (count <= 12) return "#379683";
     return "#22543d";
 }
 
